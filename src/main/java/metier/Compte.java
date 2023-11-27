@@ -1,9 +1,15 @@
 package metier;
 import java.util.Date;
+
+import jakarta.xml.bind.annotation.*;
+
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Compte {
     int code;
     double solde;
-    Date datecreation;
+    @XmlTransient
+    private Date datecreation;
 
     public Compte(int code, double solde, Date datecreation) {
         this.code = code;
